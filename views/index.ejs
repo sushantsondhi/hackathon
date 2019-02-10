@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>IITD CART</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+    <a class="navbar-brand" id="comapany" href="#">IITD CART</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto"></ul>
+      <div class="nav-item active">
+        <a class="nav-link top-nav-item home-icon" href="/">Home <span class="sr-only">(current)</span></a>
+      </div>
+
+      <div class="nav-item">
+        <a class="nav-link top-nav-item" href="/add-product">Add Product</a>
+      </div>
+
+
+
+
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+
+  <!-- Side Bar -->
+  <div class="row ">
+
+
+    <div class="col-2 side-bar">
+
+      <div class="nav-item ">
+        <a class="nav-link side-nav-item
+          <% if (pageName==="books"){%> open-link
+          <%}%>"
+          href="/books">Books</a>
+      </div>
+      <div class="nav-item ">
+        <a class="nav-link side-nav-item
+          <% if (pageName==="electronics"){%> open-link
+          <%}%>"
+          href="/electronics">Electronics</a>
+      </div>
+      <div class="nav-item ">
+        <a class="nav-link side-nav-item
+          <% if (pageName==="stationary"){%> open-link
+          <%}%>
+          " href="/stationary">Stationary</a>
+      </div>
+      <div class="nav-item ">
+        <a class="nav-link side-nav-item
+          <% if (pageName==="lab"){%> open-link
+          <%}%>
+          " href="/lab">Lab Stuff</a>
+      </div>
+
+    </div>
+    <div class="col-2">
+
+    </div>
+
+    <!-- Main body Content -->
+    <div class="col-10 page">
+
+      <!-- <div class="row">
+        <div class="col-4 product">
+          <img class="image-of-product" src="images/unavailable.jpg" alt="image-of-product">
+          <h6>Title</h6>
+          <h3>Cost :<</h3> <p class="p-description">dahfha ahfhfag jkfakja hfjakjha hkjfadjhak fHKJA HJFAKDSJ HKJFSHKJ JFDSHJHFD HDS JJHJFSDK </p>
+              <button type="submit" class="btn btn-info buy-btn" name="button">Buy</button>
+              <button class="btn btn-info negotiate-btn" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="fakse" aria-controls="collapseExample">
+                Negotiate
+              </button>
+              <div class="collapse" id="collapseExample">
+
+
+                <form class="price" action="index.html" method="post">
+                  Quote Pice:
+                  <input type="text" class="price-input " name="" value="">
+                  <button type="submit" class="btn btn-primary" name="button">submit</button>
+                </form>
+
+              </div>
+
+        </div>
+
+        <div class="col-4 product">
+          <img class="image-of-product" src="images/unavailable.jpg" alt="image-of-product">
+          <h6>Title</h6>
+          <p>dahfha ahfhfag jkfakja hfjakjha hkjfadjhak fHKJA HJFAKDSJ HKJFSHKJ JFDSHJHFD HDS JJHJFSDK </p>
+        </div>
+
+        <div class="col-4 product">
+          <img class="image-of-product" src="images/"+< alt="image-of-product">
+          <h6>Title</h6>
+          <p>dahfha ahfhfag jkfakja hfjakjha hkjfadjhak fHKJA HJFAKDSJ HKJFSHKJ JFDSHJHFD HDS JJHJFSDK </p>
+        </div>
+      </div> -->
+
+      <div class="row">
+
+        <% for (var i=0;i<type.length; i++){ %>
+        <%  if(i>0 && i%3===0){ %>
+      </div>
+      <div class="row">
+
+
+        <%  } %>
+        <div class="col-3 product">
+          <img class="image-of-product" src="images/<%= type[i].img %>"  alt="image-of-product">
+          <h5>
+            <%= type[i].product%>
+          </h5>
+          <h4>Cost : Rs.
+            <%= type[i].price %>
+          </h4>
+          <p>
+            <%= type[i].description %>
+          </p>
+          <button class="btn btn-outline-dark" type="button">
+            BUY
+          </button>
+        </div>
+
+        <%} %>
+      </div>
+     </div>
+         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+        <script src="index.js" charset="utf-8"></script>
+</body>
+
+</html>

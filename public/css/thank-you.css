@@ -1,0 +1,20 @@
+/* navbar */
+.top-nav-item{
+    color:black;
+}
+
+.navbar{
+  position: fixed;
+  top: 0;
+  height:60px;
+  width: 100%;
+  z-index: 1;
+
+}
+
+/* Main Body */
+.page{
+  color: red;
+  margin:200px auto 0;
+  text-align: center;
+}
